@@ -5,15 +5,13 @@ title: Блок else
 Поскольку два условия — `if user.loggedIn` и `if !user.loggedIn` — взаимоисключающие, мы можем немного упростить этот компонент, используя блок `else`:
 
 ```html
-{#if user.loggedIn}
-	<button on:click={toggle}>
+<button on:click={toggle}>
+	{#if user.loggedIn}
 		Выйти
-	</button>
-{:else}
-	<button on:click={toggle}>
+	{:else}
 		Войти
-	</button>
-{/if}
+	{/if}
+</button>
 ```
 
 > Символ `#` всегда обозначает *открывающий* тег. Символ `/` обозначает *закрывающий* тег. Символ `:`, как в `{:else}` — тег *разделения блока*. Не волнуйтесь, вы уже узнали практически весь дополнительный синтаксис, который Svelte добавляет в HTML.
